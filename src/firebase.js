@@ -1,7 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
-// getStorage は削除します
 
 const firebaseConfig = {
   apiKey: "AIzaSyBO_Epnlhw_7RlJObsM8ozsaDiNV_oR5jM",
@@ -16,6 +15,5 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 const db = getFirestore(app);
-// const storage = ... も削除
 
 export { auth, provider, db };
