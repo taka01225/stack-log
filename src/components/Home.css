@@ -1,0 +1,607 @@
+.homePage {
+  width: 100%;
+  min-height: calc(100vh - 80px);
+  padding: 30px 20px;
+  background-color: #f0f2f5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.searchContainer {
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 20px;
+}
+
+.searchContainer input {
+  width: 100%;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  outline: none;
+  box-sizing: border-box;
+}
+
+.searchContainer input:focus {
+  border-color: #4b85ff;
+}
+
+.postContents {
+  width: 100%;
+  max-width: 600px;
+  background-color: white;
+  margin-bottom: 25px;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+  box-sizing: border-box;
+}
+
+.postContents:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.postHeader {
+  width: 100%;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.postHeader h1 {
+  font-size: 24px;
+  text-align: center;
+  margin: 0;
+  color: #333;
+}
+
+.postTextContainer {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 20px;
+  min-height: 60px;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+.postImage {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #eee;
+  display: block;
+}
+
+.postTextContainer img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.postFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+  padding-top: 10px;
+  border-top: 1px dotted #ddd;
+}
+
+.postDate {
+  font-size: 13px;
+  color: #888;
+}
+
+.likeArea {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.likeButton {
+  background-color: transparent;
+  border: 1px solid #ff4b4b;
+  color: #ff4b4b;
+  padding: 5px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.likeButton:hover {
+  background-color: #fff0f0;
+  transform: scale(1.1);
+}
+
+.nameAndDeleteButton {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nameAndDeleteButton h3 {
+  margin: 0;
+  font-size: 14px;
+  color: #555;
+  font-weight: bold;
+}
+
+.nameAndDeleteButton button {
+  background-color: #ff4b4b;
+  color: white;
+  padding: 6px 14px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  transition: background-color 0.3s;
+}
+
+.nameAndDeleteButton .editButton {
+  background-color: #4b85ff;
+}
+
+.nameAndDeleteButton button:hover {
+  opacity: 0.8;
+}
+
+@media screen and (max-width: 600px) {
+  .postFooter {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-end;
+  }
+  .postDate { width: 100%; text-align: right; }
+  .likeArea { width: 100%; justify-content: flex-end; }
+}
+
+.commentSection {
+  border-top: 1px solid #eee;
+  padding-top: 15px;
+  margin-top: 15px;
+}
+
+.toggleCommentBtn {
+  background: none;
+  border: none;
+  color: #4b85ff;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.toggleCommentBtn:hover {
+  text-decoration: underline;
+}
+
+.commentArea {
+  margin-top: 15px;
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.commentList {
+  max-height: 200px; 
+  overflow-y: auto;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.commentBubble {
+  background-color: white;
+  padding: 8px 12px;
+  border-radius: 12px;
+  border-bottom-left-radius: 2px; 
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  width: fit-content;
+  max-width: 80%;
+}
+
+.commentAuthor {
+  font-size: 11px;
+  color: #888;
+  margin-bottom: 2px;
+}
+
+.commentText {
+  font-size: 14px;
+  color: #333;
+}
+
+.noComments {
+  font-size: 12px;
+  color: #aaa;
+  text-align: center;
+}
+
+.commentInputContainer {
+  display: flex;
+  gap: 5px;
+}
+
+.commentInputContainer input {
+  flex-grow: 1;
+  padding: 8px;
+  border-radius: 20px;
+  border: 1px solid #ddd;
+  outline: none;
+}
+
+.commentInputContainer button {
+  background-color: #4b85ff;
+  color: white;
+  border: none;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tagContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 15px;
+  justify-content: center; 
+}
+
+.tagBadge {
+  background-color: #e1ecf4;
+  color: #39739d;
+  font-size: 12px;
+  padding: 5px 10px;
+  border-radius: 15px;
+  border: 1px solid #e1ecf4;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.tagBadge svg {
+  font-size: 10px;
+}
+
+.myPageContainer {
+  width: 100%;
+  max-width: 600px;
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.profileHeader {
+  background-color: white;
+}
+
+.headerBanner {
+  width: 100%;
+  height: 150px;
+  background-color: #607d8b;
+}
+
+.profileContent {
+  padding: 0 20px 20px 20px;
+}
+
+.profileTopRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: -50px;
+  margin-bottom: 10px;
+}
+
+.profileIcon img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 4px solid white;
+  background-color: white;
+  object-fit: cover;
+}
+
+.editProfileBtn {
+  border: 1px solid #ddd;
+  background-color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.editProfileBtn:hover {
+  background-color: #f5f5f5;
+}
+
+.profileName {
+  margin: 0;
+  font-size: 22px;
+  color: #333;
+}
+
+.profileId {
+  margin: 0 0 10px 0;
+  color: #888;
+  font-size: 14px;
+}
+
+.profileMetaContainer {
+  margin-top: 10px;
+}
+
+.profileBio {
+  font-size: 15px;
+  margin-bottom: 10px;
+  line-height: 1.5;
+  color: #333;
+}
+
+.profileMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  font-size: 13px;
+  color: #666;
+}
+
+.profileMeta span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.profileMeta a {
+  color: #4b85ff;
+  text-decoration: none;
+}
+
+.profileStats {
+  display: flex;
+  gap: 10px; 
+  font-size: 14px;
+  color: #536471;
+  margin-top: 15px;
+}
+
+.profileStats strong {
+  color: #0f1419;
+}
+
+.editForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.editForm textarea, .editForm input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.profileTabs {
+  display: flex;
+  border-bottom: 1px solid #eee;
+  margin-top: 10px;
+}
+
+.tab {
+  flex: 1;
+  text-align: center;
+  padding: 15px 0;
+  cursor: pointer;
+  color: #666;
+  font-weight: bold;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+.tab:hover {
+  background-color: #f9f9f9;
+}
+
+.tab.active {
+  color: #4b85ff;
+  border-bottom: 3px solid #4b85ff;
+}
+
+.simplePost {
+  border-radius: 0;
+  box-shadow: none;
+  border-bottom: 1px solid #dcdcdc; 
+  margin: 0;
+  padding: 20px;
+}
+
+.simplePost:last-child {
+  border-bottom: none;
+}
+
+.profileGoal {
+    background-color: #fff4e6;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 10px 15px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.goalTitle {
+    font-weight: bold;
+    color: #d84315;
+    font-size: 14px;
+}
+
+.goalText {
+    color: #333;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.heatmapContainer {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.heatmapTitle {
+    margin: 0 0 10px 0;
+    font-size: 14px;
+    color: #555;
+}
+
+.react-calendar-heatmap text {
+  font-size: 10px;
+  fill: #aaa;
+}
+
+.react-calendar-heatmap .color-empty {
+  fill: #ebedf0; 
+}
+
+.react-calendar-heatmap .color-scale-1 { fill: #9be9a8; } 
+.react-calendar-heatmap .color-scale-2 { fill: #40c463; }
+.react-calendar-heatmap .color-scale-3 { fill: #30a14e; }
+.react-calendar-heatmap .color-scale-4 { fill: #216e39; } 
+
+@media screen and (max-width: 600px) {
+    .profileStats {
+        gap: 20px; 
+    }
+}
+
+.studyInfoContainer {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.timeBadge {
+    background-color: #e8f5e9; 
+    color: #2e7d32; 
+    font-weight: bold;
+    font-size: 14px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border: 1px solid #c8e6c9;
+}
+
+.categoryBadge {
+    background-color: #e3f2fd; 
+    color: #1565c0; 
+    font-size: 13px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border: 1px solid #bbdefb;
+}
+
+.rankingContainer {
+    width: 100%;
+    max-width: 600px;
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    border: 1px solid #ffd700; 
+}
+
+.rankingTitle {
+    margin: 0 0 15px 0;
+    text-align: center;
+    color: #333;
+}
+
+.rankingList {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+.rankingItem {
+    text-decoration: none;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    transition: transform 0.2s;
+}
+.rankingItem:hover {
+    transform: translateY(-3px);
+}
+
+.rankBadge {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+.rank-1 { background-color: #f1c40f; box-shadow: 0 0 10px rgba(241, 196, 15, 0.5); } 
+.rank-2 { background-color: #bdc3c7; } 
+.rank-3 { background-color: #e67e22; } 
+
+.rankUser {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rankName {
+    font-weight: bold;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100px;
+}
+
+.rankTime {
+    font-size: 12px;
+    color: #555;
+    background-color: #f0f0f0;
+    padding: 2px 8px;
+    border-radius: 10px;
+    margin-top: 3px;
+}
