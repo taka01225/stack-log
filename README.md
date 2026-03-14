@@ -1,70 +1,19 @@
-# Getting Started with Create React App
+〇学習記録・モチベーション管理アプリ「StackLog」
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+〇概要
+日々の学習時間や内容を記録し、他のユーザーと共有できるシングルページアプリケーションです。
+「継続的な学習のモチベーションを維持すること」を目的とし、活動状況の可視化やユーザー同士のコミュニケーション機能を実装しています。
 
-## Available Scripts
+〇主な機能
+・学習状況の可視化：日々の学習記録をヒートマップとしてカレンダー表示し、継続意欲を高めます。
+・モチベーション管理機能：週間ランキングや目標設定機能を備え、自分の学習ペースを客観的に把握できます。
+・SNS機能（いいね・フォロー）:他のユーザーの学習記録に対して「いいね」や「フォロー」ができ、リアルタイムな通知機能によりユーザー間の交流を促します。
+・PWA（Progressive Web Apps）対応：スマートフォンからもネイティブアプリのようにホーム画面に追加し、快適に操作することが可能です。
 
-In the project directory, you can run:
+〇開発環境・使用技術
+・フロントエンド：React(Create React App)
+・バックエンド：Firebase(Authentication, Firestore)
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+〇開発における工夫と課題解決
+・データベース設計とエラーハンドリング：Firestoreを用いた複雑なデータクエリ（フォローしたユーザーの投稿のみを取得するなど）を実装。それに伴うインデックスエラーやログイン時のFirebase認証エラーに対して、公式ドキュメントやエラーログから原因を特定し、自力で解決に導きました。
+・UX（ユーザー体験）の向上：投稿の下書き機能やナビゲーションバーのUI改善など、実際に自分で使いながら「ユーザーにとって使いやすいか」を検証し、機能改善を行いました。
